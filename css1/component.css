@@ -77,8 +77,8 @@
 }
 
 .cbp-qtrotator .cbp-qtcontent img {
-	float: right;
-	margin-left: 3em;
+	padding: 25px;
+	width: 250px;
 }
 
 /* Example for media query */

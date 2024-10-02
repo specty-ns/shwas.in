@@ -211,43 +211,81 @@ $.fn.popover.Constructor.prototype.leave = function(obj){
 
 $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
 
-document.querySelectorAll('.number-plus').forEach(counter => {
-    const updateCount = () => {
+// document.querySelectorAll('.number-plus').forEach(counter => {
+//     const updateCount = () => {
+//         const target = +counter.getAttribute('data-target');
+//         const count = +counter.innerText.replace('+', '');
+
+//         // Calculate increment (reduce the divisor to speed up the count)
+//         const increment = target / 100; // Faster speed
+
+//         if (count < target) {
+//             // Update counter
+//             counter.innerText = Math.ceil(count + increment) + '+';
+//             setTimeout(updateCount, 1); // Call function again after 1ms
+//         } else {
+//             counter.innerText = target + '+';
+//         }
+//     };
+
+//     updateCount();
+// });
+// document.querySelectorAll('.number').forEach(counter => {
+//     const updateCount = () => {
+//         const target = +counter.getAttribute('data-target');
+//         const count = +counter.innerText.replace('', '');
+
+//         // Calculate increment (reduce the divisor to speed up the count)
+//         const increment = target / 100; // Faster speed
+
+//         if (count < target) {
+//             // Update counter
+//             counter.innerText = Math.ceil(count + increment) + '';
+//             setTimeout(updateCount, 1); // Call function again after 1ms
+//         } else {
+//             counter.innerText = target + '';
+//         }
+//     };
+
+//     updateCount();
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+	// console.log("DOMContentLoaded");
+    const counters = document.querySelectorAll('.number-plus, .number');
+
+    const updateCount = (counter) => {
         const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText.replace('+', '');
+        const count = +counter.innerText.replace('+', '').replace('', '');
+        const isPlus = counter.classList.contains('number-plus');
 
         // Calculate increment (reduce the divisor to speed up the count)
         const increment = target / 100; // Faster speed
 
         if (count < target) {
             // Update counter
-            counter.innerText = Math.ceil(count + increment) + '+';
-            setTimeout(updateCount, 1); // Call function again after 1ms
+            counter.innerText = Math.ceil(count + increment) + (isPlus ? '+' : '');
+            setTimeout(() => updateCount(counter), 1); // Call function again after 1ms
         } else {
-            counter.innerText = target + '+';
+            counter.innerText = target + (isPlus ? '+' : '');
         }
     };
 
-    updateCount();
-});
-document.querySelectorAll('.number').forEach(counter => {
-    const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText.replace('', '');
+    // Intersection Observer setup
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                updateCount(counter);
+                observer.unobserve(counter); // Stop observing after animation is done
+            }
+        });
+    }, { threshold: 1.0 }); // Adjust threshold for when to trigger the animation
 
-        // Calculate increment (reduce the divisor to speed up the count)
-        const increment = target / 100; // Faster speed
-
-        if (count < target) {
-            // Update counter
-            counter.innerText = Math.ceil(count + increment) + '';
-            setTimeout(updateCount, 1); // Call function again after 1ms
-        } else {
-            counter.innerText = target + '';
-        }
-    };
-
-    updateCount();
+    // Observe each counter
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
 });
 
 

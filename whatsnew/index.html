@@ -3,12 +3,21 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="shwas">
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="keywords"
+    content="quotes rotator, content rotator, jquery, javascript, fade in, fade out, css3, component, html, web development, blockquote" />
+  <meta name="author" content="Codrops" />
+  <link rel="shortcut icon" href="../favicon.html">
+  <!-- <link rel="stylesheet" type="text/css" href="../css1/default.css" /> -->
+  <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
   <link rel="canonical" href="../index.html">
 
@@ -61,8 +70,8 @@
         </div>
         <div class="email">
           <a href="mailto:shwas.charities@gmail.com">
-             <i class="fa fa-envelope-o"></i> 
-             shwas.charities@gmail.com 
+            <i class="fa fa-envelope-o"></i>
+            shwas.charities@gmail.com
           </a>
         </div>
       </div>
@@ -120,8 +129,8 @@
   <!-- /Header -->
 
 
-  
- 
+
+
 
 
   <div class="page-title" style="background: url(../images/home/about_us.jpg);background-position: center;">
@@ -454,90 +463,493 @@
     </div>
   </section> -->
 
-  <!DOCTYPE html>
-  <html lang="en" class="no-js">
+  
+  <section>
+    <style>
+      @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords"
-      content="quotes rotator, content rotator, jquery, javascript, fade in, fade out, css3, component, html, web development, blockquote" />
-    <meta name="author" content="Codrops" />
-    <link rel="shortcut icon" href="../favicon.html">
-    <!-- <link rel="stylesheet" type="text/css" href="../css1/default.css" /> -->
+      
 
-    
-  </head>
+        .img {
+            max-width: 100%;
+        }
 
-  <section class="footer-alt bg-gray">
+        /* body {
+            font-family: "Roboto Slab", serif;
+            font-size: 15px;
+            line-height: 1.67;
+            color: #444;
+            padding: 60px 0;
+          } */
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            font-weight: 400;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title:after,
+        .section-title:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+        }
+
+        .section-title:after {
+            height: 2px;
+            background-color: rgba(252, 92, 15, 0.46);
+            left: 25%;
+            right: 25%;
+        }
+
+        .section-title:before {
+            width: 15px;
+            height: 15px;
+            border: 3px solid #fff;
+            background-color: #fc5c0f;
+            left: 50%;
+            transform: translatex(-50%);
+            bottom: -6px;
+            z-index: 9;
+            border-radius: 50%;
+        }
+
+        /* CAROUSEL STARTS */
+        .customer-feedback .owl-item img {
+            width: 50%;
+            height: 85px;
+            border-radius: 10px;
+        }
+
+        .feedback-slider-item {
+            position: relative;
+            padding: 60px;
+            margin-top: -40px;
+        }
+
+        .customer-name {
+            margin-top: 15px;
+            margin-bottom: 25px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .feedback-slider-item p {
+            line-height: 1.875;
+        }
+
+        .customer-rating {
+            background-color: #eee;
+            border: 3px solid #fff;
+            color: rgba(1, 1, 1, 0.702);
+            font-weight: 700;
+            border-radius: 50%;
+            position: absolute;
+            width: 47px;
+            height: 47px;
+            line-height: 44px;
+            font-size: 15px;
+            right: 0;
+            top: 77px;
+            text-indent: -3px;
+        }
+
+        .thumb-prev .customer-rating {
+            top: -20px;
+            left: 0;
+            right: auto;
+        }
+
+        .thumb-next .customer-rating {
+            top: -20px;
+            right: 0;
+        }
+
+        .customer-rating i {
+            color: rgb(251, 90, 13);
+            position: absolute;
+            top: 10px;
+            right: 5px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        /* GREY BACKGROUND COLOR OF THE ACTIVE SLIDER */
+        .feedback-slider-item:after {
+            content: "";
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            bottom: 0;
+            top: 103px;
+            background-color: #f6f6f6;
+            border: 1px solid rgba(251, 90, 13, 0.1);
+            border-radius: 10px;
+            z-index: -1;
+        }
+
+        .thumb-prev,
+        .thumb-next {
+            position: absolute;
+            z-index: 99;
+            top: 45%;
+            width: 98px;
+            height: 98px;
+            left: -90px;
+            cursor: pointer;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .thumb-next {
+            left: auto;
+            right: -90px;
+        }
+
+        .feedback-slider-thumb img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .feedback-slider-thumb:hover {
+            opacity: 0.8;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        }
+
+        .customer-feedback .owl-nav [class*="owl-"] {
+            position: relative;
+            display: inline-block;
+            bottom: 45px;
+            transition: all 0.2s ease-in;
+        }
+
+        .customer-feedback .owl-nav i {
+            background-color: transparent;
+            color: rgb(251, 90, 13);
+            font-size: 25px;
+        }
+
+        .customer-feedback .owl-prev {
+            left: -15px;
+        }
+
+        .customer-feedback .owl-prev:hover {
+            left: -20px;
+        }
+
+        .customer-feedback .owl-next {
+            right: -15px;
+        }
+
+        .customer-feedback .owl-next:hover {
+            right: -20px;
+        }
+
+        /* DOTS */
+        .customer-feedback .owl-dots {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 35px;
+        }
+
+        .customer-feedback .owl-dot {
+            display: inline-block;
+        }
+
+        .customer-feedback .owl-dots .owl-dot span {
+            width: 11px;
+            height: 11px;
+            margin: 0 5px;
+            background: #fff;
+            border: 1px solid rgb(251, 90, 13);
+            display: block;
+            -webkit-backface-visibility: visible;
+            -webkit-transition: all 200ms ease;
+            transition: all 200ms ease;
+            border-radius: 50%;
+          }
+          
+          .customer-feedback .owl-dots .owl-dot.active span {
+            background-color: rgb(251, 90, 13);
+        }
+
+        /* RESPONSIVE */
+        @media screen and (max-width: 767px) {
+            .feedback-slider-item:after {
+                left: 30px;
+                right: 30px;
+            }
+
+            .customer-feedback .owl-nav [class*="owl-"] {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-top: 45px;
+                bottom: auto;
+            }
+
+            .customer-feedback .owl-prev {
+                left: 0;
+            }
+
+            .customer-feedback .owl-next {
+                right: 0;
+            }
+        }
+
+        
+          </style>
+         
+    <div class="customer-feedback">
+        <div class="container text-center">
+          <div class="row">
+                <div class="col-sm-offset-2 col-sm-8">
+                    <div>
+                        <h2 class="section-title">What Clients Say</h2>
+                    </div>
+                </div><!-- /End col -->
+            </div><!-- /End row -->
+
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+                    <div class="owl-carousel feedback-slider">
+
+                        <!-- slider item -->
+                        <div class="feedback-slider-item">
+                          
+                            <img src="../images/story/We_care_charity.jpg" alt="We_care_charity-Logo"
+                                class="center-block  " alt="Customer Feedback">
+                            <h3 class="customer-name">Shefali Desai Kalyani, Founder and Trustee, We Care Charity</h3>
+                            <p>Shwas is not just a non profit organization. It is as it's name, a breath of fresh air.Shwas is an
+                              experience to be felt personally.</p>
+                            <!-- <span class="light-bg customer-rating" data-rating="5">
+                                5
+                                <i class="fa fa-star"></i>
+                            </span> -->
+                        </div>
+                        <!-- /slider item -->
+
+                        <!-- slider item -->
+                        <div class="feedback-slider-item">
+                            <img src="../images/story/Final_Logo_with_tag_transparent.png" alt="Infoanalytica-Inc-Logo"
+                                class="center-block  " alt="Customer Feedback">
+                            <h3 class="customer-name">Supriya Gupta, Manager of Social Responsibility, Infoanalytica Inc</h3>
+                            <p>Shwas is one of the most sincere, committed, consistent and focused orgainsation that we have come
+                              across.</p>
+                            <!-- <span class="light-bg customer-rating" data-rating="4">
+                                4
+                                <i class="fa fa-star"></i>
+                            </span> -->
+                        </div>
+                        <!-- /slider item -->
+
+                        <!-- slider item -->
+                        <div class="feedback-slider-item">
+                            <img src="../images/story/Karma%20Konnect.jpg" alt="KarmaKonnect-Logo"
+                                class="center-block  " alt="Customer Feedback">
+                            <h3 class="customer-name">Drumi Bhatt, Founder, KarmaKonnect</h3>
+                            <p>The KarmaKonnect team is happy to support Shwas- an extremely dedicated and committed team that not
+                              only educate but also nurtures and empowers slum kids across Ahmedabad, with a personal touch.</p>
+                            <!-- <span class="light-bg customer-rating" data-rating="5">
+                                5
+                                <i class="fa fa-star"></i>
+                            </span> -->
+                        </div>
+                        <!-- /slider item -->
+
+                    </div><!-- /End feedback-slider -->
+
+                    <!-- side thumbnail -->
+                    <!-- <div class="feedback-slider-thumb hidden-xs">
+                        <div class="thumb-prev">
+                            <span>
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/451270/profile/profile-80.jpg"
+                                    alt="Customer Feedback">
+                            </span>
+                            <span class="light-bg customer-rating">
+                                5
+                                <i class="fa fa-star"></i>
+                            </span>
+                        </div>
+
+                        <div class="thumb-next">
+                            <span>
+                                <img src="https://i.postimg.cc/ydBjdm20/michael-dam-m-EZ3-Po-FGs-k-unsplash-1.jpg"
+                                    alt="Customer Feedback">
+                            </span>
+                            <span class="light-bg customer-rating">
+                                4
+                                <i class="fa fa-star"></i>
+                            </span>
+                        </div>
+                    </div> -->
+                    <!-- /side thumbnail -->
+                </div><!-- /End col -->
+            </div><!-- /End row -->
+        </div><!-- /End container -->
+    </div><!-- /End customer-feedback -->
+</section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+<script>
+    jQuery(document).ready(function ($) {
+        const $feedbackSlider = $('.feedback-slider');
+
+        if ($feedbackSlider.length) {
+            $feedbackSlider.owlCarousel({
+                items: 1,
+                nav: true,
+                dots: true,
+                autoplay: false,
+                loop: true,
+                mouseDrag: true,
+                touchDrag: true,
+                navText: [
+                    '<i class="fa fa-long-arrow-left"></i>',
+                    '<i class="fa fa-long-arrow-right"></i>'
+                ],
+                responsive: {
+                    // viewport >= 767px
+                    767: {
+                        nav: true,
+                        dots: false
+                    }
+                }
+            });
+
+            $feedbackSlider.on('translate.owl.carousel', function () {
+                $('.feedback-slider-item h3')
+                    .removeClass('animated fadeIn')
+                    .css('opacity', '0');
+
+                $('.feedback-slider-item img, .feedback-slider-thumb img, .customer-rating')
+                    .removeClass('animated zoomIn')
+                    .css('opacity', '0');
+            });
+
+            $feedbackSlider.on('translated.owl.carousel', function () {
+                $('.feedback-slider-item h3')
+                    .addClass('animated fadeIn')
+                    .css('opacity', '1');
+
+                $('.feedback-slider-item img, .feedback-slider-thumb img, .customer-rating')
+                    .addClass('animated zoomIn')
+                    .css('opacity', '1');
+            });
+
+            $feedbackSlider.on('changed.owl.carousel', function (property) {
+                const current = property.item.index;
+
+                const prevThumb = $(property.target)
+                    .find('.owl-item')
+                    .eq(current)
+                    .prev()
+                    .find('img')
+                    .attr('src');
+
+                const nextThumb = $(property.target)
+                    .find('.owl-item')
+                    .eq(current)
+                    .next()
+                    .find('img')
+                    .attr('src');
+
+                const prevRating = $(property.target)
+                    .find('.owl-item')
+                    .eq(current)
+                    .prev()
+                    .find('span')
+                    .attr('data-rating');
+
+                const nextRating = $(property.target)
+                    .find('.owl-item')
+                    .eq(current)
+                    .next()
+                    .find('span')
+                    .attr('data-rating');
+
+                $('.thumb-prev').find('img').attr('src', prevThumb);
+                $('.thumb-next').find('img').attr('src', nextThumb);
+
+                $('.thumb-prev')
+                    .find('span')
+                    .next()
+                    .html(prevRating + '<i class="fa fa-star"></i>');
+
+                $('.thumb-next')
+                    .find('span')
+                    .next()
+                    .html(nextRating + '<i class="fa fa-star"></i>');
+            });
+
+            $('.thumb-next').on('click', function (e) {
+                e.preventDefault();
+
+                $feedbackSlider.trigger('next.owl.carousel', [300]);
+            });
+
+            $('.thumb-prev').on('click', function (e) {
+                e.preventDefault();
+
+                $feedbackSlider.trigger('prev.owl.carousel', [300]);
+            });
+        }
+    }); // end ready func
+
+</script>
+
+ 
+
+
+
+
+  <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="main">
-          <div id="cbp-qtrotator"   class="cbp-qtrotator">
-            <div class="cbp-qtcontent" >
+        <div class="col-sm-6">
+          <p style="padding-top:7px;">2019 © Shwas.</p>
+        </div>
+        <div class="col-sm-6 text-right">
+          <div class="text-right">
+            Follow Us:
+            <a href="https://www.facebook.com/ShwasBreatheLifeInto" class="fa-stack fa-lg bg-fb"> <i
+                class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </a>
 
-              <blockquote>
-                <p>Shwas is not just a non profit organization. It is as it's name, a breath of fresh air.Shwas is an
-                  experience to be felt personally.</p>
-                <footer>Shefali Desai Kalyani, Founder and Trustee, We Care Charity</footer>
-              </blockquote>
-            </div>
-            <div class="cbp-qtcontent" >
-
-              <blockquote>
-                <p>Shwas is one of the most sincere, committed, consistent and focused orgainsation that we have come
-                  across.</p>
-                <footer>Supriya Gupta, Manager of Social Responsibility, Infoanalytica Inc</footer>
-              </blockquote>
-            </div>
-            <div class="cbp-qtcontent" >
-
-              <blockquote>
-                <p>The KarmaKonnect team is happy to support Shwas- an extremely dedicated and committed team that not
-                  only educate but also nurtures and empowers slum kids across Ahmedabad, with a personal touch.</p>
-                <footer>Drumi Bhatt, Founder, KarmaKonnect</footer>
-              </blockquote>
-            </div>
+            <a href="https://www.instagram.com/shwas_kids/" class="fa-stack fa-lg bg-fb"> <i
+                class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-instagram fa-stack-1x fa-inverse"></i> </a>
 
           </div>
-
         </div>
+        <div class="clearfix"></div>
+
       </div>
     </div>
-  </section> 
-
-
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <p style="padding-top:7px;">2019 © Shwas.</p>
-          </div>
-          <div class="col-sm-6 text-right">
-            <div class="text-right">
-              Follow Us:
-              <a href="https://www.facebook.com/ShwasBreatheLifeInto" class="fa-stack fa-lg bg-fb"> <i
-                  class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </a>
-
-              <a href="https://www.instagram.com/shwas_kids/" class="fa-stack fa-lg bg-fb"> <i
-                  class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-instagram fa-stack-1x fa-inverse"></i> </a>
-
-            </div>
-          </div>
-          <div class="clearfix"></div>
-
-        </div>
-      </div>
-      </div>
-    </footer>
+    </div>
+  </footer>
 
 
   <!-- js placed at the end of the document so the pages load faster -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../js/jquery.js"></script>
 
   <!-- Jquery easing -->
-  <script type="text/javascript" src="../js/jquery.easing.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <script src="../js/SmoothScroll.js"></script>
   <script src="../js/jquery.flexslider-min.js"></script>
 
@@ -548,8 +960,7 @@
   <script type="text/javascript" src="../js/sponsor_init.js"></script> -->
 
   <script src="../js/jquery.blockUI.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
+
   <script src="../../ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="../js1/modernizr.custom.js"></script>
@@ -594,7 +1005,7 @@
 
     });
   </script>
- <!-- <script>
+  <!-- <script>
    $('#cbp-qtrotator').cbpQTRotator({
     speed: 700,
     easing: 'ease',
@@ -603,12 +1014,12 @@
 
 </script> -->
 
-   <!-- <script type="text/javascript">
+  <!-- <script type="text/javascript">
      $(document).ready(function () {
        $("#myModal").modal('show');
      });
    </script> -->
- 
+
 </body>
 
-  </html>
+</html>
