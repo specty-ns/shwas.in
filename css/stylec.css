@@ -4872,7 +4872,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .breadcrumb > .active {
   color: #777;
 }
-.pagination {
+/* .pagination {
   display: inline-block;
   padding-left: 0;
   margin: 20px 0;
@@ -4967,7 +4967,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pagination-sm > li:last-child > span {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-}
+} */
 .pager {
   padding-left: 0;
   margin: 20px 0;
@@ -13229,13 +13229,13 @@ address a {
   margin-right: 10px; /* Right margin for spacing */
 }
 
-.nihir {
+.points {
   display: flex;
   flex-wrap: wrap; /* Allows items to wrap */
   justify-content: center; /* Center items in horizontal layout */
   gap: 20px;
   padding: 20px;
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
   font-size: 20px;
 }
 
@@ -13401,7 +13401,7 @@ address a {
   margin: 0;
   color: #555;
 }
- .burger{
+.burger{
   position: absolute;
   cursor: pointer;
   right: 5%;
@@ -13410,8 +13410,217 @@ address a {
  }
 
 
-/* Testimonitals */
+.section-transition {
+  opacity: 0; /* Start hidden */
+  transform: translateY(-20px); /* Start slightly above */
+  transition: opacity 1.0s ease, transform 1.0s ease; /* Transition for fade and move */
+  /* margin: 50px 0; Add some spacing between sections */
+  /* padding: 20px; */
+  /* background: #f0f0f0; Background color for visibility */
+  /* border-radius: 5px; */
+}
+
+.show {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move into place */
+}
 
 
 
- 
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgb(225, 16, 16);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 40px;
+  width: 60px;
+  height: 60px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: calc(30% - 40px);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 60%; 
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.card:hover .card-image {
+  
+  transform: rotate(360deg); /* Slight rotation effect on hover */
+}
+
+@media (max-width: 768px) {
+  .card {
+      width: calc(45% - 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+      width: calc(100% - 40px);
+  }
+}
+
+
+/* Pagination Wrapper to Center Pagination */
+.pagination-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination {
+  display: inline-flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination button {
+  background-color: #3498db; /* Light Blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #2980b9; /* Darker Blue */
+}
+
+.pagination button.active {
+  background-color: #c93448; /* Green for active page */
+}
+
+.pagination button:disabled {
+  background-color: #bdc3c7; /* Disabled Button Color */
+  cursor: not-allowed;
+}
+
+@media (max-width: 576px) {
+  .pagination button {
+      padding: 8px 15px;
+      font-size: 14px;
+  }
+}
+
+/* Styling for the logo row */
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* Logo card with circular design and shadow */
+.logo-card {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.logo-img {
+  width: 100px; /* Size of logo image inside the card */
+  height: auto;
+  /* border-radius: 50%; Optional: to ensure logos fit well */
+  transition: transform 0.3s ease;
+}
+
+.logo-card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.logo-card:hover .logo-img {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .logo-card {
+      width: 100px;
+      height: 100px;
+  }
+
+  .logo-img {
+      width: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-card {
+      width: 90px;
+      height: 90px;
+  }
+
+  .logo-img {
+      width: 55px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px; /* Space between grid items */
+}
+
+.grid-item {
+  background-color: #fff; /* Background for each grid item */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  overflow: hidden; /* Ensure no overflow */
+  text-align: center; /* Center text */
+}
+
+.grid-item img {
+  max-width: 100%; /* Responsive images */
+  height: auto; /* Maintain aspect ratio */
+}
