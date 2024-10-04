@@ -11,6 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="shwas">
   <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+  
 
   <link rel="canonical" href="../index.html">
 
@@ -114,7 +115,7 @@
             <a href="../youtube/index.html">Videos</a>
           </li>
           <li>
-            <a href="index.html">What Do We Do </a>
+            <a href="index.html">What We Do </a>
           </li>
           <li>
             <a href="../stories/index.html">Supporters</a>
@@ -135,7 +136,7 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-sm-12">
-          <h3 class="text-uppercase">What Do We Do</h3>
+          <h3 class="text-uppercase">What We Do</h3>
         </div>
       </div>
     </div>
@@ -201,20 +202,20 @@
 
         <div class="counter-container">
           <div class="counter " style="color: rgb(225, 16, 16);">
-            <span class="number" data-target="30">0</span>
-            <div class="label"><br>Ahmedabad</div>
+            <span class="number" data-target="28">0</span>
+            <div class="label"><br>Ahmedabad, Gujarat</div>
           </div>
           <div class="counter " style="color: rgb(225, 16, 16);">
-            <span class="number" data-target="10">0</span>
-            <div class="label"><br>Vadodara</div>
+            <span class="number" data-target="4">0</span>
+            <div class="label"><br>Baroda, Gujarat</div>
           </div>
           <div class="counter " style="color: rgb(225, 16, 16);">
-            <span class="number" data-target="5">0</span>
-            <div class="label"><br>Cities</div>
+            <span class="number" data-target="2">0</span>
+            <div class="label"><br>Jamnagar, Gujarat</div>
           </div>
           <div class="counter " style="color: rgb(225, 16, 16);">
             <span class="number" data-target="1">0</span>
-            <div class="label"><br>Rajasthan</div>
+            <div class="label"><br>Deogarh, Rajasthan</div>
           </div>
         </div><br>
 
@@ -227,10 +228,10 @@
 
         <div class="col-sm-12 text-center">
           <br />
-          <p>To ensure quality and continuous education, we enroll potential students to a private school by taking care
+          <p style="font-size: 18px;">To ensure quality and continuous education, we enroll potential students to a private school by taking care
             of the entire financial responsibility of the same.
-          </p><br />
-          <p>"A little help can go a long way for these children."
+          </p ><br />
+          <p style="font-size: 18px;">"A little help can go a long way for these children."
           </p>
         </div>
       </div>
@@ -250,7 +251,7 @@
         <img src="../images/logo_new.png" alt="logo" height="auto">
       </div>
       <div class="col-3">
-        <h6 class="text-center">Quick Links</h6>
+        <h6 class="text-center">Connect With Us</h6>
         <div class="social">
           <a href="https://www.facebook.com/ShwasBreatheLifeInto" target="_blank"><i
               class="fa-brands fa-facebook-f"></i></a>
@@ -285,94 +286,12 @@
   </footer>
 
 
-  <script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-      // console.log("DOMContentLoaded");
-      const counters = document.querySelectorAll('.number-plus, .number');
-
-      const updateCount = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText.replace('+', '').replace('', '');
-        const isPlus = counter.classList.contains('number-plus');
-
-        // Calculate increment (reduce the divisor to speed up the count)
-        const increment = target / 100; // Faster speed
-
-        if (count < target) {
-          // Update counter
-          counter.innerText = Math.ceil(count + increment) + (isPlus ? '+' : '');
-          setTimeout(() => updateCount(counter), 1); // Call function again after 1ms
-        } else {
-          counter.innerText = target + (isPlus ? '+' : '');
-        }
-      };
-
-      // Intersection Observer setup
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const counter = entry.target;
-            updateCount(counter);
-            observer.unobserve(counter); // Stop observing after animation is done
-          }
-        });
-      }, { threshold: 1.0 }); // Adjust threshold for when to trigger the animation
-
-      // Observe each counter
-      counters.forEach(counter => {
-        observer.observe(counter);
-      });
-    });
-
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const sections = document.querySelectorAll('.section');
-
-      const options = {
-        root: null, // Use the viewport as the root
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger when 10% of the section is visible
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target); // Stop observing once shown
-          }
-        });
-      }, options);
-
-      sections.forEach(section => {
-        observer.observe(section); // Observe each section
-      });
-    });
-
-    let mybutton = document.getElementById("myBtn");
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () { scrollFunction() };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
+  
 
   </script>
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="../js/jquery.js"></script>
-  <script src="../js/main.js"></script>
-
+  
   <!-- Jquery easing -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <script src="../js/SmoothScroll.js"></script>
@@ -385,12 +304,13 @@
   <script type="text/javascript" src="../js/sponsor_init.js"></script>
 
   <script src="../js/jquery.blockUI.js"></script>
-
+  
   <!--common script for all pages-->
-  <!-- <script src="../js/contactapp.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/contactapp.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../../ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="../js1/jquery.cbpQTRotator.min.js"></script> -->
+  <script src="../js1/jquery.cbpQTRotator.min.js"></script>
 
 </body>
 
