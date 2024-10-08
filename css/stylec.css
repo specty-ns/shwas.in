@@ -12781,6 +12781,7 @@ h1,
   width: auto;
   height: 100px;
 }
+
 .tagline {
   font-size: 13px;
   color: #2d2e2e;
@@ -13569,7 +13570,7 @@ address a {
 }
 
 .logo-img {
-  width: 100px; /* Size of logo image inside the card */
+  width: 120px; /* Size of logo image inside the card */
   height: auto;
   /* border-radius: 50%; Optional: to ensure logos fit well */
   transition: transform 0.3s ease;
@@ -13603,6 +13604,10 @@ address a {
 
   .logo-img {
       width: 62px;
+  }
+  .logo img {
+    width: auto;
+    height: 80px;
   }
 }
 
