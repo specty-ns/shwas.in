@@ -265,7 +265,7 @@
     </div>
     </div>
     <div class="copyright">
-      Copyright &#169; 2024 | Shwas
+      Copyright &#169; <span id="year"></span> | Shwas Charitable Trust
     </div>
   </footer>
 
@@ -280,6 +280,9 @@
 
   <!--common script for all pages-->
   <script src="../js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
   <script type="text/javascript">
     $(document).ready(function () {

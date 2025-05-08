@@ -329,9 +329,12 @@
     </div>
     </div>
     <div class="copyright">
-      Copyright &#169; 2024 | Shwas
+      Copyright &#169; <span id="year"></span> | Shwas Charitable Trust
     </div>
   </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 
   
